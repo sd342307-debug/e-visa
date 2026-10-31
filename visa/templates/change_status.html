@@ -1,0 +1,41 @@
+{% include 'admin_navigation.html' %}
+
+<marquee behavior="alternate" style="font-family: 'Monotype Corsiva'; font-size:25px; color:darkcyan; background-color:black; font-weight:bold; margin-top:1%">
+        Change E-Visa Status
+</marquee>
+<hr>
+
+<div class="row justify-content-center">
+    <div class="col-10 col-md-5" style="background:lightgray;border-radius:10px;padding:2px 70px;">
+        <form class="container mt-5" method="post">
+            {% csrf_token %}
+            <label><b>Sender Name:</b></label>
+            <input type="text" class="form-control" name="uname" value="{{booking.first_name}}  {{booking.last_name}}">
+            <label><b>Status:</b></label>
+            <select class="form-control" name="rstatus">
+                 <option value="Confirm">Confirm</option>
+                <option value="Canceled">Cancel</option>
+            </select>
+        <center>
+            <input type="submit" class="btn btn-primary" style="margin-top:2%; color:darkcyan; background-color:black ; height:50px; font-size:25px">
+        </center>
+        </form>
+    </div>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert("Status Changed Successfully")
+    window.location = ('{% url 'all_visa' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Something went wrong, Try Again")
+</script>
+{% endif %}
+
+
+{% include 'footer.html' %}
+

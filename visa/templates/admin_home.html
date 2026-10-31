@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'admin_navigation.html' %}
+    {% load static %}
+<style>
+    .row{
+        margin: 0px;
+    }
+    .home-base{
+        height: 40vw;
+    }
+    .home-main{
+        background-image: url({% static 'images/6.png' %});
+        background-size:100% 100%;
+        border-radius:20px;
+    }
+</style>
+</head>
+<body>
+<div class="row home-base align-self-center justify-content-center">
+    <div class="col-10 home-main mt-2"></div>
+</div>
+</body>
+</html>
+
+{% include 'footer.html' %}

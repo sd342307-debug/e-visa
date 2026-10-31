@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'admin_navigation.html' %}
+</head>
+<body>
+<div class="row users-base justify-content-center mt-3">
+    <div class="col-10 col-md-9" style="border:1px solid black;border-radius:10px;">
+        <table class="table">
+            <tr style="background:lightgray;">
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>DOB</th>
+                <th>Action</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{ forloop.counter }} </td>
+                <td>{{ i.user.first_name }} {{ i.user.last_name }}</td>
+                <td>{{ i.user.username }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.mobile }}</td>
+                <td>{{ i.address }}</td>
+                <td>{{ i.dob }}</td>
+                <td>
+                    <a href="{% url 'delete_user' i.user.id %}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-arrow-up"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+{% include 'footer.html' %}
