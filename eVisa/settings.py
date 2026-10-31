@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$=cpl+ddd(x8lak6&uk_3x@tm2s!wk!5$0&=z+m&(=_#*w8rl2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['e-visa-2.onrender.com']
 
 
 # Application definition
